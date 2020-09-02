@@ -70,5 +70,5 @@ import yaml  # pip install pyyaml
 with open(Path(__file__).parent / "logging.conf", "r") as f:
     config.dictConfig(yaml.safe_load(f.read()))
 
-logger.info("I like jam")
-logger.info("I like peanut butter")
+logger.info("I like jam")           # console prints
+logger.info("I like peanut butter") # does not print (see filter in logging.conf)
