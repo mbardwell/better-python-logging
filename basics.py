@@ -42,7 +42,8 @@ class StringContainsFilter(logging.Filter):
         self.params = params
 
     def filter(self, record: logging.LogRecord):
-        # "if true let it through"
+        #  if the record contains the string, return false
+        #  "if true let it through"
         #  for you nerds think high pass filter, not coffee grounds filter
         return not any([param in record.getMessage() for param in self.params])
 logger.addFilter(StringContainsFilter(["weather problem"]))
